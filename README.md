@@ -11,3 +11,9 @@ brew install kind
 ```
 kind create cluster --name sandbox --image=kindest/node:v1.26.3
 ```
+
+## Example
+
+```
+kubectl appl -f manifests/namespaces.yaml
+```
