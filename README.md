@@ -3,17 +3,19 @@
 ## Prerequisites
 
 ```
+brew install --cask docker
 brew install kind
 ```
 
 ## Set up
 
 ```
-kind create cluster --name sandbox --image=kindest/node:v1.26.3
+kind_version=v1.29.1
+kind create cluster --name "sandbox-$kind_version" --image="kindest/node:$kind_version"
 ```
 
 ## Example
 
 ```
-kubectl appl -f manifests/namespaces.yaml
+kubectl apply -f manifests/namespaces.yaml
 ```
