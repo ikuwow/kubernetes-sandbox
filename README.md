@@ -19,3 +19,9 @@ kind create cluster --name "sandbox-$kind_version" --image="kindest/node:$kind_v
 ```
 kubectl apply -f manifests/namespaces.yaml
 ```
+
+## Tips
+
+```
+kubectl run --rm -it --image=curlimages/curl client -- sh
+```

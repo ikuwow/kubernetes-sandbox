@@ -1,6 +1,19 @@
 ---
-# Client pod using busybox image:
-
+apiVersion: v1
+kind: Service
+metadata:
+  namespace: primary
+  name: sample
+  labels:
+    app: sample
+spec:
+  selector:
+    app: sample
+  type: ClusterIP
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -13,11 +26,11 @@ spec:
   replicas: 3
   selector:
     matchLabels:
-      app: nginx
+      app: sample
   template:
     metadata:
       labels:
-        app: nginx
+        app: sample
     spec:
       containers:
         - name: nginx
