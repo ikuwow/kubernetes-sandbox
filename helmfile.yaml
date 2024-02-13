@@ -1,0 +1,14 @@
+repositories:
+  - name: istio
+    url: https://istio-release.storage.googleapis.com/charts
+    # https://istio.io/latest/docs/setup/install/helm/
+
+releases:
+  - name: istio-base
+    namespace: istio-system
+    createNamespace: true
+    chart: istio/base
+  - name: istiod
+    namespace: istio-system
+    createNamespace: true
+    chart: istio/istiod
