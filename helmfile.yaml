@@ -12,3 +12,5 @@ releases:
     namespace: istio-system
     createNamespace: true
     chart: istio/istiod
+    values:
+      - ./config.yaml
