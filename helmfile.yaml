@@ -2,6 +2,8 @@ repositories:
   - name: istio
     url: https://istio-release.storage.googleapis.com/charts
     # https://istio.io/latest/docs/setup/install/helm/
+  - name: kiali
+    url: https://kiali.org/helm-charts
 
 releases:
   - name: istio-base
@@ -13,4 +15,10 @@ releases:
     createNamespace: true
     chart: istio/istiod
     values:
-      - ./config.yaml
+      - ./helm-values/istiod.yaml
+  - name: kiali-server
+    namespace: istio-system
+    createNamespace: true
+    chart: kiali/kiali-server
+    values:
+      - ./helm-values/kiali.yaml
