@@ -10,7 +10,6 @@
 
 ## Set up
 
-
 Create cluster:
 
 ```

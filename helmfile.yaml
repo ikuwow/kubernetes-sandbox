@@ -5,6 +5,7 @@ repositories:
   - name: kiali
     url: https://kiali.org/helm-charts
     # https://kiali.io/docs/installation/installation-guide/install-with-helm/
+    # https://helm.sh/docs/chart_best_practices/custom_resource_definitions/#method-1-let-helm-do-it-for-you
 
 releases:
   - name: istio-base
