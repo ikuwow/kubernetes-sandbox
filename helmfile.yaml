@@ -4,6 +4,7 @@ repositories:
     # https://istio.io/latest/docs/setup/install/helm/
   - name: kiali
     url: https://kiali.org/helm-charts
+    # https://kiali.io/docs/installation/installation-guide/install-with-helm/
 
 releases:
   - name: istio-base
@@ -16,9 +17,9 @@ releases:
     chart: istio/istiod
     values:
       - ./helm-values/istiod.yaml
-  - name: kiali-server
-    namespace: istio-system
+  - name: kiali-operator
+    namespace: kiali-operator
     createNamespace: true
-    chart: kiali/kiali-server
+    chart: kiali/kiali-operator
     values:
       - ./helm-values/kiali.yaml

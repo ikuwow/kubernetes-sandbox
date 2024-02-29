@@ -10,27 +10,25 @@
 
 ## Set up
 
+
+Create cluster:
+
 ```
 k8s_version=v1.29.1
 kind create cluster --name "sandbox-$k8s_version" --config=cluster.yaml --image="kindest/node:$k8s_version"
+```
 
-# After context swiched:
+Configure cluster:
+
+```
 helmfile init # Install diff, secrets, s3, helm-git plugin
 helmfile apply
-```
-
-One-time operations:
-
-```
-# Install kiali
-# https://istio.io/latest/docs/ops/integrations/kiali/
-kubectl apply -f https://raw.githubusercontent.com/istio/istio/release-1.20/samples/addons/
 ```
 
 ## Example
 
 ```
-kubectl apply -f manifests/namespaces.yaml
+kubectl apply -f manifests/
 ```
 
 ## Tips
